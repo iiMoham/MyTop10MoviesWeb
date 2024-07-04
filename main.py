@@ -19,7 +19,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL", "sqlite:///movies.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = ("postgresql://topmoviesdatabase_user:rRX7k4Xh8OaPRrkoCS1HzBgQkWlXO1rO@dpg-cq38un4s1f4s73fba8cg-a/topmoviesdatabase","sqlite:///movies.db")
 
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
