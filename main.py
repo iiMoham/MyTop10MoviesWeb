@@ -6,6 +6,7 @@ from sqlalchemy import Integer, String, Float
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+import psycopg2
 import requests
 import os
 
@@ -19,7 +20,7 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = ("postgresql://topmoviesdatabase_user:rRX7k4Xh8OaPRrkoCS1HzBgQkWlXO1rO@dpg-cq38un4s1f4s73fba8cg-a/topmoviesdatabase","sqlite:///movies.db")
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///movies.db"
 
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
